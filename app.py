@@ -59,7 +59,7 @@ def menu_for_admin():
 
 while(1):
     print("Welcome to employee management system!")
-    user_option = input("""
+    user_option = int(input("""
     Please input from the following options:
     1. add employee
     2. remove employee
@@ -67,7 +67,7 @@ while(1):
     4. find employee
     5. display information
     6. day end(Admin rights required)
-    ==> """)
+    ==> """))
     if user_option == 1:
         main_menu.add_employee()
     elif user_option == 2:
