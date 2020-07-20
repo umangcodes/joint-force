@@ -1,25 +1,3 @@
-"""
-Project: Joint_Force_1
-
-Authors: Umang A, Devam A
-Date & Time: 20 July 2020 || 1415 EST
-
-Description: To be updated. See Scope
-"""
-
-"""
-1. make employee objects
-2. shift start time
-3. break time
-4. shift end time
-5. employee location/duty
-
-6. remark/s
-
-7. 
-"""
-
-
 class Employee():
     def __init__(self,name,start_time,end_time,location):
         self.employee_name = name
@@ -35,17 +13,3 @@ class Employee():
             return f"full time"#self.shift_type = "full time"
         else:
             return f"half time"#self.shift_type = "half time"
-
-def menu_for_admin():
-    """
-    give options to the admin
-    options:
-    - add employee
-    - remove employee
-    - change employee params
-    - inquire employee params
-    - submit day end data
-    - break intimation
-    - change employee location/role
-    :return:
-    """
