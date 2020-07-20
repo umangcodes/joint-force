@@ -30,10 +30,10 @@ class Employee():
     def calculate_shift_type(self):
         time_difference = self.end_time - self.start_time
         if time_difference > 4.30:
-            self.shift_type = "full time"
+            return f"full time"#self.shift_type = "full time"
         else:
-            self.shift_type = "half time"
+            return f"half time"#self.shift_type = "half time"
 
 Umang = Employee("Umang",1430,2300,"cashier")
-Umang.calculate_shift_type()
+
 print(Umang)
