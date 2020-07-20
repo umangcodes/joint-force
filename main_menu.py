@@ -54,7 +54,7 @@ def remove_employee():
     index_of_employee = find_employee(1)
     remove_employee = employee_list[index_of_employee]
     employee_list.pop(index_of_employee)
-    print("employee removed.\n Details of employee removed: {remove_employee}")
+    print(f"employee removed.\n Details of employee removed: {remove_employee}")
 
 def inquire_employee_attributes():
     index_of_employee = find_employee(1)
