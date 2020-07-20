@@ -54,15 +54,7 @@ def menu_for_admin():
     - change employee location/role
     :return:
     """
-def add_employee():
-    add_employee = input("enter employee name: ")
-    start_time = int(input("please enter start time: "))
-    end_time = int(input("please enter end time: "))
-    duty = input("please enter employee duty: ")
-    new_employee = add_employee.title()
-    new_employee = Employee(new_employee,start_time,end_time,duty)
-    new_employee.calculate_shift_type()
-    employee_list.append(new_employee)
+
 
 while(1):
     add_employee()
