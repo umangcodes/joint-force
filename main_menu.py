@@ -61,7 +61,7 @@ def inquire_employee_attributes():
     employee_object = employee_list[index_of_employee]
     print(employee_object)
     print(employee_list)
-    
+
 def change_employee_shift_start_time():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
@@ -92,6 +92,9 @@ def change_employee_attributes(change_attribute_option):
     else:
         print("invalid command")
 
+def display_employees():
+    for employee in employee_list:
+        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}")
 
 def day_end():
     for _ in employee_list:
