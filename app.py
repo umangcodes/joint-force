@@ -22,7 +22,7 @@ Description: To be updated. See Scope
                            "break_type": "", "break_start_time": , "break_end_time": , "actual_break_start_time": ,"actual_break_end_time": },
                            "break_type": "", "break_start_time": , "break_end_time": , "actual_break_start_time": ,"actual_break_end_time": }]
 """
-#employee_list = []
+employee_list = []
 class Employee():
     def __init__(self,name,start_time,end_time,location):
         self.employee_name = name
@@ -62,7 +62,7 @@ def add_employee():
     new_employee = add_employee.title()
     new_employee = Employee(new_employee,start_time,end_time,duty)
     new_employee.calculate_shift_type()
- #   employee_list.append(new_employee)
+    employee_list.append(new_employee)
 
 while(1):
     add_employee()
