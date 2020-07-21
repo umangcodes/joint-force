@@ -28,11 +28,19 @@ import main_menu
 
 #def menu_for_admin():
 
+attribute_change = """
+To change start time press 1
+To change end time press 2
+To change role press 3
+==> """
 
-while(1):
-    print("Welcome to employee management system!")
-    try:
-        user_option = int(input("""
+find_employee = """
+To find by name press 1
+To find by start time press 2
+To find by end time press 3
+==> """
+
+greeting_message = """
 Please input from the following options:
 1. add employee
 2. remove employee
@@ -40,28 +48,25 @@ Please input from the following options:
 4. find employee
 5. display information
 6. day end(Admin rights required)
-==> """))
+==> """
+
+while(1):
+    print("Welcome to employee management system!")
+    try:
+        user_option = int(input(f"{greeting_message}"))
         if user_option == 1:
             main_menu.add_employee()
         elif user_option == 2:
             main_menu.remove_employee()
         elif user_option == 3:
             try:
-                user_option = int(input("""
-To change start time press 1
-To change end time press 2
-To change role press 3
-"""))
+                user_option = int(input(f"{attribute_change}"))
                 main_menu.change_employee_attributes(user_option)
             except:
                 print("Invalid")
         elif user_option == 4:
             try:
-                user_option = int(input("""
-To find by name press 1
-To find by start time press 2
-To find by end time press 3
-                    """))
+                user_option = int(input(f"{find_employee}"))
                 main_menu.find_employee(user_option)
             except:
                 print("invalid")
