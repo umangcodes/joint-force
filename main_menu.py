@@ -29,7 +29,7 @@ def find_employee(method):
                 break
         else:
             print("employee not found")
-    elif method == 2:
+    elif method == 2:#feature implement all employees after that time
         find_employee_by_start_time = int(input("Please enter start time: "))
         for element in employee_list:
             if find_employee_by_start_time == element.start_time:
@@ -69,17 +69,20 @@ def change_employee_shift_start_time():
     employee_object.start_time = changed_start_time
     employee_object.calculate_shift_type()
 
+    print("Updated shift schedule")
+    print(employee_object.shift_type)
+
 def change_employee_shift_end_time():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     changed_end_time = int(input("Please enter change in end time (hhmm): "))
-    employee_object.start_time = changed_end_time
+    employee_object.end_time = changed_end_time
     employee_object.calculate_shift_type()
 
 def change_employee_role():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
-    changed_role = input("Please enter change in end time (hhmm): ")
+    changed_role = input("Please enter change in role: ")
     employee_object.start_time = changed_role
 
 def change_employee_attributes(change_attribute_option):

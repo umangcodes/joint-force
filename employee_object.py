@@ -9,7 +9,9 @@ class Employee():
         return f"Employee {self.employee_name} is working for {self.shift_type} today from {self.start_time} till {self.end_time} at {self.location}"
     def calculate_shift_type(self):
         time_difference = self.end_time - self.start_time
-        if time_difference > 4.30:
+        print("Masti idhar hai")
+        print(self.start_time, self.end_time, )
+        if time_difference >= 400:#4 hour difference
             self.shift_type = "full time"
         else:
             self.shift_type = "half time"
