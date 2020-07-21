@@ -1,3 +1,4 @@
+import datetime
 class Employee():
     def __init__(self,name,start_time,end_time,location):
         self.employee_name = name
@@ -9,9 +10,13 @@ class Employee():
         return f"Employee {self.employee_name} is working for {self.shift_type} today from {self.start_time} till {self.end_time} at {self.location}"
     def calculate_shift_type(self):
         time_difference = self.end_time - self.start_time
-        print("Masti idhar hai")
-        print(self.start_time, self.end_time, )
-        if time_difference >= 400:#4 hour difference
-            self.shift_type = "full time"
-        else:
-            self.shift_type = "half time"
+        print(self.start_time, self.end_time)
+        print(time_difference)
+        try:
+            if time_difference >= datetime.timedelta(hour=4):
+                self.shift_type = "full time"
+                print("------------------------------------")
+            else:
+                self.shift_type = "half time"
+        except:
+            print("yaha he gochi")

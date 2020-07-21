@@ -11,6 +11,7 @@ give options to the admin
     :return:
     """
 from employee_object import Employee
+import input_time_converter
 employee_list = []
 def find_employee(method):
     """
@@ -43,8 +44,8 @@ def find_employee(method):
 def add_employee():
     add_employee = input("enter employee name: ")
     try:
-        start_time = int(input("please enter start time: "))
-        end_time = int(input("please enter end time: "))
+        start_time = input_time_converter.Format_time.convert_to_timedelta()
+        end_time = input_time_converter.Format_time.convert_to_timedelta()
     except:
         print("Enter numerical values (hhmm) format only!")
     duty = input("please enter employee duty: ")
