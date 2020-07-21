@@ -42,8 +42,11 @@ def find_employee(method):
 
 def add_employee():
     add_employee = input("enter employee name: ")
-    start_time = int(input("please enter start time: "))
-    end_time = int(input("please enter end time: "))
+    try:
+        start_time = int(input("please enter start time: "))
+        end_time = int(input("please enter end time: "))
+    except:
+        print("Enter numerical values (hhmm) format only!")
     duty = input("please enter employee duty: ")
     new_employee = add_employee.title()
     new_employee = Employee(new_employee,start_time,end_time,duty)
@@ -65,19 +68,25 @@ def inquire_employee_attributes():
 def change_employee_shift_start_time():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
-    changed_start_time = int(input("Please enter change in start time (hhmm): "))
-    employee_object.start_time = changed_start_time
-    employee_object.calculate_shift_type()
+    try:
+        changed_start_time = int(input("Please enter change in start time (hhmm): "))
+        employee_object.start_time = changed_start_time
+        employee_object.calculate_shift_type()
 
-    print("Updated shift schedule")
-    print(employee_object.shift_type)
+        print("Updated shift schedule")
+        print(employee_object.shift_type)
+    except:
+        print("Oops! something went wrong")
 
 def change_employee_shift_end_time():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
-    changed_end_time = int(input("Please enter change in end time (hhmm): "))
-    employee_object.end_time = changed_end_time
-    employee_object.calculate_shift_type()
+    try:
+        changed_end_time = int(input("Please enter change in end time (hhmm): "))
+        employee_object.end_time = changed_end_time
+        employee_object.calculate_shift_type()
+    except:
+        print("Oops! something went wrong.")
 
 def change_employee_role():
     index_of_employee = find_employee(1)
