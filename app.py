@@ -23,7 +23,10 @@ Description: To be updated. See Scope
                            "break_type": "", "break_start_time": , "break_end_time": , "actual_break_start_time": ,"actual_break_end_time": }]
 
 - add break time functionality
+ 
 """
+
+#TODO: add break functionality and notification system.
 import main_menu
 import os
 import sys
