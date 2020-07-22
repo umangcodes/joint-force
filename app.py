@@ -50,6 +50,10 @@ Please input from the following options:
 6. day end(Admin rights required)
 ==> """
 
+punch_options = """
+Press 1 to Punch in
+Press 2 to Punch out
+"""
 while(1):
 
 
@@ -82,6 +86,10 @@ while(1):
         elif user_option == 6:
             os.system('cls')
             main_menu.day_end()
+        elif user_option == 7:
+            os.system('cls')
+            user_option = int(input(punch_options))
+            main_menu.employee_punch(user_option)
     except:
         os.system('cls')
         print("Invalid command. Please enter correct type of data.")

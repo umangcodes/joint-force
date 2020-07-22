@@ -12,6 +12,7 @@ give options to the admin
     """
 from employee_object import Employee
 import input_time_converter
+import employee_punch_in
 employee_list = []
 def find_employee(method):
     """
@@ -112,3 +113,13 @@ def display_employees():
 def day_end():
     for _ in employee_list:
         print(_)
+
+def employee_punch(punch_type):
+    index_of_employee = find_employee(1)
+    employee_object = employee_list[index_of_employee]
+    if punch_type == 1:
+        employee_punch_in.display_current_time()
+        employee_object.actual_start_time = employee_punch_in.punch()
+    elif punch_type == 2:
+        employee_punch_in.display_current_time()
+        employee_object.actual_end_time = employee_punch_in.punch()
