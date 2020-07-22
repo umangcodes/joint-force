@@ -118,7 +118,7 @@ def employee_punch_record(punch_type):
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     if punch_type == 1:
-        employee_punch.display_current_time()#TODO: Some kind of issue
+        employee_punch.display_current_time()# module name and function name were same.
         employee_object.actual_start_time = employee_punch.punch()
     elif punch_type == 2:
         employee_punch.display_current_time()
