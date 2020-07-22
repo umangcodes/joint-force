@@ -51,7 +51,7 @@ Please input from the following options:
 ==> """
 
 while(1):
-print("Welcome to employee management system!")
+    print("Welcome to employee management system!")
     user_option = int(input(f"{greeting_message}"))
     if user_option == 1:
         main_menu.add_employee()
