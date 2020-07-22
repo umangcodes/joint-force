@@ -35,7 +35,7 @@ while(1):
 
     print("Welcome to employee management system!")
     try:
-        user_option = int(input(f"{greeting_message}"))
+        user_option = int(input(f"{greeting_messages.greeting_message}"))
         if user_option == 1:
             os.system('cls')
             main_menu.add_employee()
@@ -45,14 +45,14 @@ while(1):
         elif user_option == 3:
             try:
                 os.system('cls')
-                user_option = int(input(f"{attribute_change}"))
+                user_option = int(input(f"{greeting_messages.attribute_change}"))
                 main_menu.change_employee_attributes(user_option)
             except:
                 print("Invalid")
         elif user_option == 4:
             try:
                 os.system('cls')
-                user_option = int(input(f"{find_employee}"))
+                user_option = int(input(f"{greeting_messages.find_employee}"))
                 main_menu.find_employee(user_option)
             except:
                 print("invalid")
@@ -64,7 +64,7 @@ while(1):
             main_menu.day_end()
         elif user_option == 7:
             os.system('cls')
-            user_option = int(input(punch_options))
+            user_option = int(input(greeting_messages.punch_options))
             main_menu.employee_punch(user_option)
     except:
         os.system('cls')
