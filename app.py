@@ -28,9 +28,9 @@ import main_menu
 import os
 import sys
 import greeting_messages
-
-while(1):
-    print("Welcome to employee management system!")
+user_option = "whatever"
+print("Welcome to employee management system!")
+while(user_option != 0):
     try:
         user_option = int(input(f"{greeting_messages.greeting_message}"))
         if user_option == 1:
@@ -63,9 +63,9 @@ while(1):
             os.system('cls')
             user_option = int(input(greeting_messages.punch_options))
             main_menu.employee_punch_record(user_option)
-        elif user_option == 0:
-            sys.exit(0)#TODO:not working
     except:
         os.system('cls')
         print("Invalid command. Please enter correct type of data.")
         input("Press any key to continue.")
+
+sys.exit()#TODO:WorkingS

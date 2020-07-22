@@ -13,6 +13,7 @@ give options to the admin
 from employee_object import Employee
 import input_time_converter
 import employee_punch
+import sys
 employee_list = []
 def find_employee(method):
     """
@@ -123,3 +124,4 @@ def employee_punch_record(punch_type):
     elif punch_type == 2:
         employee_punch.display_current_time()
         employee_object.actual_end_time = employee_punch.punch()
+
