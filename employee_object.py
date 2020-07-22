@@ -12,8 +12,11 @@ class Employee():
         time_difference = self.end_time - self.start_time
         print(self.start_time, self.end_time)
         print(time_difference)
-        if time_difference >= datetime.timedelta(hours=4):
-            self.shift_type = "full time"
-            print("------------------------------------")
-        else:
-            self.shift_type = "half time"
+        try:
+            if time_difference >= datetime.timedelta(hours=4):
+                self.shift_type = "full time"
+                print("------------------------------------")
+            else:
+                self.shift_type = "half time"
+        except:
+            print("yaha he gochi")

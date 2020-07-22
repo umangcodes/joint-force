@@ -25,7 +25,7 @@ Description: To be updated. See Scope
 - add break time functionality
 """
 import main_menu
-
+import os
 #def menu_for_admin():
 
 attribute_change = """
@@ -51,27 +51,38 @@ Please input from the following options:
 ==> """
 
 while(1):
+
+
     print("Welcome to employee management system!")
-    user_option = int(input(f"{greeting_message}"))
-    if user_option == 1:
-        main_menu.add_employee()
-    elif user_option == 2:
-        main_menu.remove_employee()
-    elif user_option == 3:
-        try:
-            user_option = int(input(f"{attribute_change}"))
-            main_menu.change_employee_attributes(user_option)
-        except:
-            print("Invalid")
-    elif user_option == 4:
-        try:
-            user_option = int(input(f"{find_employee}"))
-            main_menu.find_employee(user_option)
-        except:
-            print("invalid")
-    elif user_option == 5:
-        main_menu.display_employees()
-    elif user_option == 6:
-        main_menu.day_end()
-
-
+    try:
+        user_option = int(input(f"{greeting_message}"))
+        if user_option == 1:
+            os.system('cls')
+            main_menu.add_employee()
+        elif user_option == 2:
+            os.system('cls')
+            main_menu.remove_employee()
+        elif user_option == 3:
+            try:
+                os.system('cls')
+                user_option = int(input(f"{attribute_change}"))
+                main_menu.change_employee_attributes(user_option)
+            except:
+                print("Invalid")
+        elif user_option == 4:
+            try:
+                os.system('cls')
+                user_option = int(input(f"{find_employee}"))
+                main_menu.find_employee(user_option)
+            except:
+                print("invalid")
+        elif user_option == 5:
+            os.system('cls')
+            main_menu.display_employees()
+        elif user_option == 6:
+            os.system('cls')
+            main_menu.day_end()
+    except:
+        os.system('cls')
+        print("Invalid command. Please enter correct type of data.")
+        input("Press any key to continue.")

@@ -43,9 +43,11 @@ def find_employee(method):
 
 def add_employee():
     add_employee = input("enter employee name: ")
-    start_time = input_time_converter.Format_time.convert_to_timedelta()
-    end_time = input_time_converter.Format_time.convert_to_timedelta()
-    print("Enter numerical values (hhmm) format only!")
+    try:
+        start_time = input_time_converter.Format_time.convert_to_timedelta()
+        end_time = input_time_converter.Format_time.convert_to_timedelta()
+    except:
+        print("Enter numerical values (hhmm) format only!")
     duty = input("please enter employee duty: ")
     new_employee = add_employee.title()
     new_employee = Employee(new_employee,start_time,end_time,duty)
