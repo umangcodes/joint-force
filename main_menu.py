@@ -93,7 +93,7 @@ def change_employee_role():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     changed_role = input("Please enter change in role: ")
-    employee_object.start_time = changed_role
+    employee_object.location = changed_role
 
 def change_employee_attributes(change_attribute_option):
     if change_attribute_option == 1:
