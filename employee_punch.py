@@ -5,6 +5,10 @@ Author: Umang A
 Date: 22 July 2020
 
 Description: This program provides functions for logging punch in and punch out of employees.
+
+
+TODO: documentation
+TODO: sample on how to use this file
 """
 import datetime
 def display_current_time():

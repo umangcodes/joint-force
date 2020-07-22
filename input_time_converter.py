@@ -2,7 +2,8 @@
 what this file will do?
 
 take user input
-
+TODO: documentation
+TODO: sample on how to use this file
 hh & mm in string and convert the string to int
 
 input the values in the datetime.time()

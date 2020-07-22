@@ -1,3 +1,7 @@
+"""
+TODO: documentation
+TODO: sample on how to use this file
+"""
 import datetime
 class Employee():
     def __init__(self,name,start_time,end_time,location,start = "NA",end = "NA"):

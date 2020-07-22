@@ -12,7 +12,7 @@ give options to the admin
     """
 from employee_object import Employee
 import input_time_converter
-import employee_punch_in
+import employee_punch
 employee_list = []
 def find_employee(method):
     """
@@ -108,18 +108,18 @@ def change_employee_attributes(change_attribute_option):
 
 def display_employees():
     for employee in employee_list:
-        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}")
+        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}")
 
 def day_end():
     for _ in employee_list:
         print(_)
 
-def employee_punch(punch_type):
+def employee_punch_record(punch_type):
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     if punch_type == 1:
-        employee_punch_in.display_current_time()
-        employee_object.actual_start_time = employee_punch_in.punch()
+        employee_punch.display_current_time()#TODO: Some kind of issue
+        employee_object.actual_start_time = employee_punch.punch()
     elif punch_type == 2:
-        employee_punch_in.display_current_time()
-        employee_object.actual_end_time = employee_punch_in.punch()
+        employee_punch.display_current_time()
+        employee_object.actual_end_time = employee_punch.punch()
