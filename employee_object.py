@@ -16,7 +16,8 @@ class Employee():
         self.break_est_2 = 0
         self.break_est_long = 0
         self.break_actual_1 = 0
-        self.break_actu
+        self.break_actual_2 = 0
+        self.break_actual_long = 0
         self.remark = ""
     def __repr__(self):
         return f"Employee {self.employee_name} is working for {self.shift_type} today from {self.start_time} till {self.end_time} at {self.location}"
