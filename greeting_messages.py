@@ -24,3 +24,6 @@ punch_options = """
 Press 1 to Punch in
 Press 2 to Punch out
 """
+
+#TODO: check whether multi line f strings exist or not?
+#TODO: if they do place a multiline f string which can display the punch status
