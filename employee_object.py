@@ -4,14 +4,14 @@ TODO: sample on how to use this file
 """
 import datetime
 class Employee():
-    def __init__(self,name,start_time,end_time,location,start = "NA",end = "NA"):
+    def __init__(self,name,start_time,end_time,location,actual_start_time = "NA",actual_end_time = "NA"):
         self.employee_name = name
         self.start_time = start_time
         self.end_time = end_time
         self.location = location
         self.shift_type = ""
-        self.actual_start_time = start
-        self.actual_end_time = end
+        self.actual_start_time = actual_start_time
+        self.actual_end_time = actual_end_time
         self.remark = ""
     def __repr__(self):
         return f"Employee {self.employee_name} is working for {self.shift_type} today from {self.start_time} till {self.end_time} at {self.location}"
