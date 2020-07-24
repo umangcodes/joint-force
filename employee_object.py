@@ -12,6 +12,11 @@ class Employee():
         self.shift_type = ""
         self.actual_start_time = actual_start_time
         self.actual_end_time = actual_end_time
+        self.break_est_1 = 0
+        self.break_est_2 = 0
+        self.break_est_long = 0
+        self.break_actual_1 = 0
+        self.break_actu
         self.remark = ""
     def __repr__(self):
         return f"Employee {self.employee_name} is working for {self.shift_type} today from {self.start_time} till {self.end_time} at {self.location}"
@@ -27,3 +32,8 @@ class Employee():
                 self.shift_type = "half time"
         except:
             print("Oops! Could not process shift type.\nPlease make sure you enter time in start and end time.")
+    def estimate_break_time(self):
+        if self.shift_type == "full time":
+            datetime.timedelta(hours=2)
+        elif self.shift_type == "half time":
+            datetime.timedelta(hours=2,minutes=30)
