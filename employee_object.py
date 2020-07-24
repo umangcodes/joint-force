@@ -35,13 +35,16 @@ class Employee():
         except:
             print("Oops! Could not process shift type.\nPlease make sure you enter time in start and end time.")
     def estimate_break_time(self):
-        if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
-            self.break_est_1 = datetime.timedelta(hours=2)
-            self.break_est_1 = self.start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
-            #TODO: For now self.actual_start_time is replaced by self.start_time
-            self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
-            self.break_est_2 = self.break_est_long + datetime.timedelta(hours=2, minutes=30)
-        #elif self.shift_type == "half time":
-         #   datetime.timedelta(hours=2,minutes=30)
-        else:
-            print("operation did not work")
+        if self.punch_status == "IN":
+            if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
+                self.break_est_1 = datetime.timedelta(hours=2)
+                self.break_est_1 = self.start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
+                #TODO: For now self.actual_start_time is replaced by self.start_time
+                self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
+                self.break_est_2 = self.break_est_long + datetime.timedelta(hours=2, minutes=30)
+            #elif self.shift_type == "half time":
+             #   datetime.timedelta(hours=2,minutes=30)
+            else:
+                print("operation did not work")
+        if self.punch_status == "OUT"
+            print(f"shift over! breaks taken at \n break 1 at: {self.break_actual_1}\n break 2 at: {self.break_actual_2}\n long break at: {self.break_actual_long}")
