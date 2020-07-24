@@ -36,7 +36,7 @@ class Employee():
     def estimate_break_time(self):
         if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
             self.break_est_1 = datetime.timedelta(hours=2)
-            self.break_est_1 = self.start_time + self.break_est_1#TODO: Fault....no function present to add self.actual_start_time.
+            self.break_est_1 = self.start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
             #TODO: For now self.actual_start_time is replaced by self.start_time
             self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
             self.break_est_2 = self.break_est_long + datetime.timedelta(hours=2, minutes=30)
