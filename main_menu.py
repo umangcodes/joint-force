@@ -54,6 +54,7 @@ def add_employee():
     new_employee = add_employee.title()
     new_employee = Employee(new_employee,start_time,end_time,duty)
     new_employee.calculate_shift_type()
+    new_employee.estimate_break_time()
     employee_list.append(new_employee)
 
 def remove_employee():
@@ -109,7 +110,7 @@ def change_employee_attributes(change_attribute_option):
 
 def display_employees():
     for employee in employee_list:
-        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}")
+        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}")
 
 def day_end():
     for _ in employee_list:
