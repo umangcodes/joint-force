@@ -45,6 +45,6 @@ class Employee():
             #elif self.shift_type == "half time":
              #   datetime.timedelta(hours=2,minutes=30)
             else:
-                print("operation did not work")
-        if self.punch_status == "OUT"
+                print("operation did not work")#TODO: fault the punch in will provide a timstamp instead of time. The time stamp is essential so do not remove it, instead find a way to trim down the date from timestamp
+        if self.punch_status == "OUT":
             print(f"shift over! breaks taken at \n break 1 at: {self.break_actual_1}\n break 2 at: {self.break_actual_2}\n long break at: {self.break_actual_long}")

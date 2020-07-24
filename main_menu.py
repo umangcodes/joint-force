@@ -111,7 +111,7 @@ def change_employee_attributes(change_attribute_option):
 def display_employees():
     for employee in employee_list:
         print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}")
-
+        employee.estimate_break_time()
 def day_end():
     for _ in employee_list:
         print(_)
