@@ -12,6 +12,7 @@ class Employee():
         self.shift_type = ""
         self.actual_start_time = actual_start_time
         self.actual_end_time = actual_end_time
+        self.punch_status = 0
         self.break_est_1 = 0
         self.break_est_2 = 0
         self.break_est_long = 0
