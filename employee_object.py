@@ -35,15 +35,19 @@ class Employee():
         except:
             print("Oops! Could not process shift type.\nPlease make sure you enter time in start and end time.")
     def estimate_break_time(self):
-        if self.punch_status == "IN":
+        if self.punch_status == "NOT SIGNED IN":
             if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
                 self.break_est_1 = datetime.timedelta(hours=2)
                 self.break_est_1 = self.start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
-                #TODO: For now self.actual_start_time is replaced by self.start_time
                 self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
                 self.break_est_2 = self.break_est_long + datetime.timedelta(hours=2, minutes=30)
-            #elif self.shift_type == "half time":
-             #   datetime.timedelta(hours=2,minutes=30)
+            elif self.shift_type == "half time":
+                self.break_est_1 = datetime.timedelta(hours=2,minutes=30)
+                self.break_est_1 = self.start_time + self.break_est_1
+                self.break_est_2 = f"N/A"
+                self.break_est_long = f"N/A"
+        elif self.punch_status == ""
+
             else:
                 print("operation did not work")#TODO: fault the punch in will provide a timstamp instead of time. The time stamp is essential so do not remove it, instead find a way to trim down the date from timestamp
         if self.punch_status == "OUT":
