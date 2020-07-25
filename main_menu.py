@@ -122,9 +122,9 @@ def employee_punch_record(punch_type):
     if punch_type == 1:
         employee_punch.display_current_time()# module name and function name were same.
         employee_object.actual_start_time = employee_punch.punch()
-        employee_object.punch_status = "IN"
+        employee_object.punch_status = "SIGNED IN"
     elif punch_type == 2:
         employee_punch.display_current_time()
         employee_object.actual_end_time = employee_punch.punch()
-        employee_object.punch_status = "OUT"
+        employee_object.punch_status = "SIGNED OUT"
 
