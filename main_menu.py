@@ -33,12 +33,12 @@ def find_employee(method):
         else:
             print("employee not found")
     elif method == 2:#feature implement all employees after that time
-        find_employee_by_start_time = int(input("Please enter start time: "))
+        find_employee_by_start_time = int(input("Please enter start time: "))#TODO: this feature does not work as intended as the input is of int type
         for element in employee_list:
             if find_employee_by_start_time == element.start_time:
                 print(element)
     elif method == 3:
-        find_employee_by_end_time = int(input("Please enter end time: "))
+        find_employee_by_end_time = int(input("Please enter end time: "))#TODO: this feature does not work as intended as the input is of int type
         for element in employee_list:
             if find_employee_by_end_time == element.end_time:
                 print(element)
@@ -110,8 +110,8 @@ def change_employee_attributes(change_attribute_option):
 
 def display_employees():
     for employee in employee_list:
-        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}")
         employee.estimate_break_time()
+        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}")
 def day_end():
     for _ in employee_list:
         print(_)
