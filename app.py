@@ -66,6 +66,8 @@ while(user_option != 0):
             os.system('cls')
             user_option = int(input(greeting_messages.punch_options))
             main_menu.employee_punch_record(user_option)
+        else:
+            print(f"{user_option} --> no such option present")
     except:
         os.system('cls')
         print("Invalid command. Please enter correct type of data.")
