@@ -65,6 +65,9 @@ while(user_option != 0):
             os.system('cls')
             user_option = int(input(greeting_messages.punch_options))
             main_menu.employee_punch_record(user_option)
+        elif user_option == 8:
+            os.system('cls')
+            main_menu.test_break_feature_with_dict()
     except:
         os.system('cls')
         print("Invalid command. Please enter correct type of data.")

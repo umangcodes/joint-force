@@ -13,7 +13,6 @@ give options to the admin
 from employee_object import Employee
 import input_time_converter
 import employee_punch
-import sys
 employee_list = []
 def find_employee(method):
     """
@@ -111,7 +110,8 @@ def change_employee_attributes(change_attribute_option):
 def display_employees():
     for employee in employee_list:
         employee.estimate_break_time()
-        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}")
+        employee_break_time = employee.break_info[1]
+        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee_break_time['break_estimate_1']}\t||\t{employee_break_time['break_estimate_long']}\t||\t{employee_break_time['break_estimate_2']}")
 def day_end():
     for _ in employee_list:
         print(_)
@@ -128,4 +128,12 @@ def employee_punch_record(punch_type):
         employee_punch.display_current_time()
         employee_object.actual_end_time = employee_punch.punch()
         employee_object.punch_status = "SIGNED OUT"
+
+def test_break_feature_with_dict():
+    print("break_feature_with_dict\n\n\n\n")
+    index_of_employee = find_employee(1)
+    employee_object = employee_list[index_of_employee]
+    employee_breaks_at = employee_object.break_info[1]
+    print(f"break 1 : {employee_breaks_at['break_estimate_1']},\nbreak long : {employee_breaks_at['break_estimate_long']},\nbreak 2 : {employee_breaks_at['break_estimate_2']}")
+    print(f"break 1 : {employee_breaks_at['break_actual_1']},\nbreak long : {employee_breaks_at['break_actual_long']},\nbreak 2 : {employee_breaks_at['break_actual_2']}")
 
