@@ -68,3 +68,39 @@ class Employee():
                 #TODO: fault the punch in will provide a timestamp instead of time. The time stamp is essential so do not remove it, instead find a way to trim down the date from timestamp
         if self.punch_status == "SIGNED OUT":
             print(f"shift over! breaks taken at \n break 1 at: {self.break_actual_1}\n break 2 at: {self.break_actual_2}\n long break at: {self.break_actual_long}")
+
+    def estimate_break_time_with_dict(self):
+        if self.punch_status == "NOT SIGNED IN":
+            if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
+                estimate_break_time_dict = self.break_info[1]
+                estimate_break_time_dict["break_estimate_1"]= datetime.timedelta(hours=2)
+                estimate_break_time_dict["break_estimate_1"] = self.start_time + estimate_break_time_dict["break_estimate_1"]#TODO: Fault....function present to add self.actual_start_time also contains date.
+                estimate_break_time_dict["break_estimate_long"] = estimate_break_time_dict["break_estimate_1"] + datetime.timedelta(hours=2)
+                estimate_break_time_dict["break_estimate_2"] = estimate_break_time_dict["break_estimate_long"] + datetime.timedelta(hours=2, minutes=30)
+            elif self.shift_type == "half time":
+                estimate_break_time_dict = self.break_info[1]
+                estimate_break_time_dict["break_estimate_1"] = datetime.timedelta(hours=2,minutes=30)
+                estimate_break_time_dict["break_estimate_1"] = self.start_time + estimate_break_time_dict["break_estimate_1"]
+                estimate_break_time_dict["break_estimate_2"] = f"N/A"
+                estimate_break_time_dict["break_estimate_long"] = f"N/A"
+            else:
+                print(f"ERROR: cannot find value of <object> attribute shift_type\n\t\t\t|object.shift_type = {self.punch_status}| ")
+        elif self.punch_status == "SIGNED IN":
+            if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
+                estimate_break_time_dict = self.break_info[1]
+                estimate_break_time_dict["break_estimate_1"] = datetime.timedelta(hours=2)
+                estimate_break_time_dict["break_estimate_1"] = self.actual_start_time + estimate_break_time_dict["break_estimate_1"]#TODO: Fault....function present to add self.actual_start_time also contains date.
+                estimate_break_time_dict["break_estimate_long"] = estimate_break_time_dict["break_estimate_1"] + datetime.timedelta(hours=2)
+                estimate_break_time_dict["break_estimate_2"] = estimate_break_time_dict["break_estimate_long"] + datetime.timedelta(hours=2, minutes=30)
+            elif self.shift_type == "half time":
+                estimate_break_time_dict = self.break_info[1]
+                estimate_break_time_dict["break_estimate_1"] = datetime.timedelta(hours=2,minutes=30)
+                estimate_break_time_dict["break_estimate_1"] = self.actual_start_time + estimate_break_time_dict["break_estimate_long"]
+                estimate_break_time_dict["break_estimate_2"] = f"N/A"
+                estimate_break_time_dict["break_estimate_long"] = f"N/A"
+            else:
+                print(f"ERROR: cannot find value of <object> attribute shift_type\n\t\t\t|object.shift_type = {self.punch_status}| ")
+                #TODO: fault the punch in will provide a timestamp instead of time. The time stamp is essential so do not remove it, instead find a way to trim down the date from timestamp
+        if self.punch_status == "SIGNED OUT":
+            estimate_break_time_dict = self.break_info[1]
+            print(f"shift over! breaks taken at \n break 1 at: {estimate_break_time_dict['break_estimate_1']}\n break 2 at: {estimate_break_time_dict['break_estimate_2']}\n long break at: {estimate_break_time_dict['break_estimate_long']}")
