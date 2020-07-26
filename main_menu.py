@@ -112,6 +112,11 @@ def display_employees():
     for employee in employee_list:
         employee.estimate_break_time()
         print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}")
+def display_employees_with_dict():
+    for employee in employee_list:
+        employee.estimate_break_time()
+        employee_break_time = employee.break_info[1]
+        print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee_break_time['break_estimate_1']}\t||\t{employee_break_time['break_estimate_long']}\t||\t{employee_break_time['break_estimate_2']}")
 def day_end():
     for _ in employee_list:
         print(_)
