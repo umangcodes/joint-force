@@ -73,8 +73,9 @@ def change_employee_shift_start_time():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     try:
-        changed_start_time = int(input("Please enter change in start time (hhmm): "))
-        employee_object.start_time = changed_start_time
+        # here the original time or the time before the new entry is lost as the attribute
+        # is overwritten by the new statement TODO:think about a mechanism to solve this issue[cat: data loss]
+        employee_object.start_time = input_time_converter.Format_time.convert_to_timedelta()
         employee_object.calculate_shift_type()
 
         print("Updated shift schedule")
@@ -86,8 +87,8 @@ def change_employee_shift_end_time():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     try:
-        changed_end_time = int(input("Please enter change in end time (hhmm): "))
-        employee_object.end_time = changed_end_time
+        # same issue as above.
+        employee_object.end_time = input_time_converter.Format_time.convert_to_timedelta()
         employee_object.calculate_shift_type()
     except:
         print("Oops! something went wrong.")

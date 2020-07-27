@@ -10,7 +10,7 @@ input the values in the datetime.time()
 
 """
 import datetime
-
+import greeting_messages
 class Format_time():
     def __init__(self):
         pass
@@ -29,8 +29,14 @@ class Format_time():
     @staticmethod
     def convert_to_timedelta():
         try:
-            user_input_hh = int(input(f"Please enter the hour(hh): "))
-            user_input_mm = int(input(f"Please enter the minutes(mm): "))
+            operation_status = 0
+            while operation_status == 0:
+                user_input_hh = int(input(f"Please enter the hour(hh): "))
+                user_input_mm = int(input(f"Please enter the minutes(mm): "))
+                if (user_input_hh <= 23) and (user_input_hh >= 00) and (user_input_mm) < 60 and (user_input_mm) >= 00:
+                    operation_status = 1
+                else:
+                    print(greeting_messages.time_overflow)
             user_input_timedelta_formatted = datetime.timedelta(hours=user_input_hh, minutes=user_input_mm)
             return user_input_timedelta_formatted
         except:
@@ -43,3 +49,4 @@ time_difference = b-a
 if time_difference >= datetime.timedelta(hours=4):
     print("success")
 """
+

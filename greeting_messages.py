@@ -25,5 +25,6 @@ Press 1 to Punch in
 Press 2 to Punch out
 """
 
+time_overflow = "Time you entered is invalid!"
 #TODO: check whether multi line f strings exist or not?
 #TODO: if they do place a multiline f string which can display the punch status
