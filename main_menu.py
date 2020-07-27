@@ -123,9 +123,9 @@ def day_end():
 
 def employee_punch_record(punch_type):
     index_of_employee = find_employee(1)
-    employee_object = employee_list[index_of_employee]#TODO:employee_object.py is being overwritten by this particular operation which makes this program actually feasible.
+    employee_object = employee_list[index_of_employee]  # TODO:employee_object.py is being overwritten by this particular operation which makes this program actually feasible.
     if punch_type == 1:
-        employee_punch.display_current_time()# module name and function name were same.
+        employee_punch.display_current_time()  # module name and function name were same.
         employee_object.actual_start_time = employee_punch.punch()
         employee_object.punch_status = "SIGNED IN"
         employee_object.estimate_break_time()
