@@ -104,3 +104,23 @@ class Employee():
         if self.punch_status == "SIGNED OUT":
             estimate_break_time_dict = self.break_info[1]
             print(f"shift over! breaks taken at \n break 1 at: {estimate_break_time_dict['break_estimate_1']}\n break 2 at: {estimate_break_time_dict['break_estimate_2']}\n long break at: {estimate_break_time_dict['break_estimate_long']}")
+    def change_start_time_feasibility(self):
+        """
+        This function will compare two times for authorizing the change in global variables which in turn will change the start & end time
+        while also providing the logic.
+        - start time must not be > end time
+        - difference between start and end must not be < 1 hour(use global variables for this)
+        - difference between start and end time must not be > 12 hours(use global variables for this)
+        - authorization from sup/mgr to change time if LATE condition occurs
+        :return:
+        """
+        current_time = datetime.datetime.now()
+        current_time_hour = current_time.second
+        print(type(current_time_hour))
+        print(self.start_time.seconds//3600)
+        start_time_h = self.start_time.seconds//3600
+        if current_time_hour <= start_time_h:
+            print("Possible")
+
+        else:
+            print("you are late for this operation")

@@ -9,7 +9,7 @@ In this case, available data is created by day_end function
 """
 
 import datetime
-
+import authorization
 class Logger_data():
     def __init__(self,supervisor):
         self.filename = datetime.date
@@ -25,6 +25,14 @@ class Logger_data():
         :return:
         """
         pass
+    def log_entry(self):
+        sup_id = input("Supervisor/Manger ID: ")
+        sup_pass = input("Supervisor/Manager Password: ")
+        if authorization.authorize(sup_id,sup_pass) == True:
+            print("Authorized")
+            return sup_id
+        elif authorization.authorize(sup_id,sup_pass) == False:
+            print("Please try again!")
 
 
 
