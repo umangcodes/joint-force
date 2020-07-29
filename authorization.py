@@ -1,2 +1,2 @@
 def authorize(SID,SPWD):
-    pass
+    return True
