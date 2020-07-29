@@ -75,7 +75,9 @@ def change_employee_shift_start_time():
     try:
         # here the original time or the time before the new entry is lost as the attribute
         # is overwritten by the new statement TODO:think about a mechanism to solve this issue[cat: data loss]
+        temp_storage = employee_object.start_time
         employee_object.start_time = input_time_converter.Format_time.convert_to_timedelta()
+        employee_object.change_start_time_feasibility()
         employee_object.calculate_shift_type()
 
         print("Updated shift schedule")
