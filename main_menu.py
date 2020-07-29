@@ -77,7 +77,8 @@ def change_employee_shift_start_time():
         # is overwritten by the new statement TODO:think about a mechanism to solve this issue[cat: data loss]
         temp_storage = employee_object.start_time
         employee_object.start_time = input_time_converter.Format_time.convert_to_timedelta()
-        employee_object.change_start_time_feasibility()
+        if employee_object.change_start_time_feasibility() == False:
+            employee_object.start_time = temp_storage
         employee_object.calculate_shift_type()
 
         print("Updated shift schedule")
@@ -89,9 +90,12 @@ def change_employee_shift_end_time():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     try:
-        # same issue as above.
+        temp_storage = employee_object.end_time# same issue as above.
         employee_object.end_time = input_time_converter.Format_time.convert_to_timedelta()
+        if employee_object.change_end_time_feasibility() == False:
+            employee_object.end_time = temp_storage
         employee_object.calculate_shift_type()
+
     except:
         print("Oops! something went wrong.")
 
