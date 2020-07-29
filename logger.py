@@ -25,7 +25,8 @@ class Logger_data():
         :return:
         """
         pass
-    def log_entry(self):
+    @staticmethod
+    def log_entry():
         sup_id = input("Supervisor/Manger ID: ")
         sup_pass = input("Supervisor/Manager Password: ")
         if authorization.authorize(sup_id,sup_pass) == True:
@@ -33,6 +34,3 @@ class Logger_data():
             return sup_id
         elif authorization.authorize(sup_id,sup_pass) == False:
             print("Please try again!")
-
-
-
