@@ -3,7 +3,7 @@ TODO: documentation
 TODO: sample on how to use this file
 """
 import datetime
-
+import global_logic_flags
 import logger
 
 
@@ -35,10 +35,14 @@ class Employee():
         print(self.start_time, self.end_time)
         print(time_difference)
         try:
-            if time_difference > datetime.timedelta(hours=4):
+            if time_difference > datetime.timedelta(hours=global_logic_flags.Regulations_variables.max_shift_time):
+                self.shift_type = "max time"
+            elif time_difference >= datetime.timedelta(hours=global_logic_flags.Regulations_variables.full_shift_time_difference):
                 self.shift_type = "full time"
-            elif time_difference == datetime.timedelta(hours=4):
+            elif time_difference >= datetime.timedelta(hours=global_logic_flags.Regulations_variables.half_shift_time_difference):
                 self.shift_type = "half time"
+            elif time_difference >= datetime.timedelta(hours=global_logic_flags.Regulations_variables.min_shift_time):
+                self.shift_type = "min time"
             else:
                 self.shift_type = "No shift"
         except:
