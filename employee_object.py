@@ -35,11 +35,12 @@ class Employee():
         print(self.start_time, self.end_time)
         print(time_difference)
         try:
-            if time_difference >= datetime.timedelta(hours=4):
+            if time_difference > datetime.timedelta(hours=4):
                 self.shift_type = "full time"
-                print("------------------------------------")
-            else:
+            elif time_difference == datetime.timedelta(hours=4):
                 self.shift_type = "half time"
+            else:
+                self.shift_type = "No shift"
         except:
             print("Oops! Could not process shift type.\nPlease make sure you enter time in start and end time.")
     def estimate_break_time(self):
