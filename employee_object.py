@@ -3,6 +3,10 @@ TODO: documentation
 TODO: sample on how to use this file
 """
 import datetime
+
+import logger
+
+
 class Employee():
     def __init__(self,name,start_time,end_time,location,actual_start_time = "NA",actual_end_time = "NA"):
         self.employee_name = name
@@ -116,11 +120,17 @@ class Employee():
         """
         current_time = datetime.datetime.now()
         current_time_hour = current_time.second
-        print(type(current_time_hour))
-        print(self.start_time.seconds//3600)
+        #print(type(current_time_hour))
+        #print(self.start_time.seconds//3600)
         start_time_h = self.start_time.seconds//3600
         if current_time_hour <= start_time_h:
-            print("Possible")
-
-        else:
-            print("you are late for this operation")
+            return True
+        elif current_time_hour > start_time_h:
+            print("This operation is restricted!\n Need authorization.\n")
+            log = logger.Logger_data.log_entry()#This function will call authorization as well
+            if log == False:
+                print(f"cannot authorize at this time.[check employee_object.change_start_time_feasibility()]")
+            else:
+                print(f"log: {log}")
+        #else:
+        #    print("you are late for this operation")
