@@ -123,14 +123,27 @@ class Employee():
         #print(type(current_time_hour))
         #print(self.start_time.seconds//3600)
         start_time_h = self.start_time.seconds//3600
-        if current_time_hour <= start_time_h:
+        if current_time_hour > start_time_h:
             return True
-        elif current_time_hour > start_time_h:
+        elif current_time_hour <= start_time_h:
             print("This operation is restricted!\n Need authorization.\n")
             log = logger.Logger_data.log_entry()#This function will call authorization as well
             if log == False:
                 print(f"cannot authorize at this time.[check employee_object.change_start_time_feasibility()]")
             else:
                 print(f"log: {log}")
-        #else:
-        #    print("you are late for this operation")
+    def change_end_time_feasibility(self):
+        current_time = datetime.datetime.now()
+        current_time_hour = current_time.second
+        #print(type(current_time_hour))
+        #print(self.start_time.seconds//3600)
+        end_time_h = self.end_time.seconds//3600
+        if current_time_hour > end_time_h:
+            return True
+        elif current_time_hour <= end_time_h:
+            print("This operation is restricted!\n Need authorization.\n")
+            log = logger.Logger_data.log_entry()#This function will call authorization as well
+            if log == False:
+                print(f"cannot authorize at this time.[check employee_object.change_start_time_feasibility()]")
+            else:
+                print(f"log: {log}")
