@@ -34,3 +34,4 @@ class Logger_data():
             return sup_id
         elif authorization.authorize(sup_id,sup_pass) == False:
             print("Please try again!")
+            return False
