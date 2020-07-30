@@ -76,9 +76,11 @@ while(user_option != 0):
             pass
         else:
             print(f"{user_option} --> no such option present")
+
     except:
         os.system('cls')
         print("Invalid command. Please enter correct type of data.")
         input("Press any key to continue.")
+        print(main_menu.employee_list)
 
 sys.exit()#TODO:WorkingS
