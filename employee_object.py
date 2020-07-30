@@ -5,7 +5,8 @@ TODO: sample on how to use this file
 import datetime
 import global_logic_flags
 import logger
-
+import employee_punch
+import greeting_messages
 
 class Employee():
     def __init__(self,name,start_time,end_time,location,actual_start_time = "NA",actual_end_time = "NA"):
@@ -28,6 +29,7 @@ class Employee():
         self.break_actual_long_end = "N/A"
         self.break_actual_2_end = "N/A"
         self.break_actual_3_end = "N/A"
+        self.break_overflow = []
         self.remark = ""
         """
         self.break_info = [{"break_estimate_1": 0, "break_estimate_2": 0, "break_estimate_long": 0},
@@ -185,5 +187,71 @@ class Employee():
                 return False
             else:
                 print(f"log: {log}")
-    def inquire_break(self):
-        if self.break_actual_1_start == "N/A":
+    def break_punch_in(self):
+        if self.shift_type == "max time":
+            if self.break_actual_3_start != "N/A":
+                print(greeting_messages.break_over_flow)
+                extra_break = employee_punch.punch()
+                self.break_overflow.append(extra_break)
+            if self.break_actual_1_start == "N/A":
+                self.break_actual_1_start = employee_punch.punch()
+            elif self.break_actual_2_start == "N/A":
+                self.break_actual_2_start = employee_punch.punch()
+            elif self.break_actual_long_start == "N/A":
+                self.break_actual_long_start = employee_punch.punch()
+            elif self.break_actual_3_start == "N/A":
+                self.break_actual_3_start = employee_punch.punch()
+        elif self.shift_type == "full time":
+            if self.break_actual_2_start != "N/A":
+                print(greeting_messages.break_over_flow)
+                extra_break = employee_punch.punch()
+                self.break_overflow.append(extra_break)
+            if self.break_actual_1_start == "N/A":
+                self.break_actual_1_start = employee_punch.punch()
+            elif self.break_actual_long_start == "N/A":
+                self.break_actual_long_start = employee_punch.punch()
+            elif self.break_actual_2_start == "N/A":
+                self.break_actual_2_start = employee_punch.punch()
+        elif self.shift_type == "half time" or "min time":
+            if self.break_actual_1_start != "N/A":
+                print(greeting_messages.break_over_flow)
+                extra_break = employee_punch.punch()
+                self.break_overflow.append(extra_break)
+            if self.break_actual_1_start == "N/A":
+                self.break_actual_1_start = employee_punch.punch()
+        else:
+            print(greeting_messages.break_punch_in_error)
+    def break_punch_out(self):
+        if self.shift_type == "max time":
+            if self.break_actual_3_end != "N/A":
+                print(greeting_messages.break_over_flow)
+                extra_break = employee_punch.punch()
+                self.break_overflow.append(extra_break)
+            if self.break_actual_1_end == "N/A":
+                self.break_actual_1_end = employee_punch.punch()
+            elif self.break_actual_2_end == "N/A":
+                self.break_actual_2_end = employee_punch.punch()
+            elif self.break_actual_long_end == "N/A":
+                self.break_actual_long_end = employee_punch.punch()
+            elif self.break_actual_3_end == "N/A":
+                self.break_actual_3_end = employee_punch.punch()
+        elif self.shift_type == "full time":
+            if self.break_actual_2_end != "N/A":
+                print(greeting_messages.break_over_flow)
+                extra_break = employee_punch.punch()
+                self.break_overflow.append(extra_break)
+            if self.break_actual_1_end == "N/A":
+                self.break_actual_1_end = employee_punch.punch()
+            elif self.break_actual_long_end == "N/A":
+                self.break_actual_long_end = employee_punch.punch()
+            elif self.break_actual_2_end == "N/A":
+                self.break_actual_2_end = employee_punch.punch()
+        elif self.shift_type == "half time" or "min time":
+            if self.break_actual_1_end != "N/A":
+                print(greeting_messages.break_over_flow)
+                extra_break = employee_punch.punch()
+                self.break_overflow.append(extra_break)
+            if self.break_actual_1_end == "N/A":
+                self.break_actual_1_end = employee_punch.punch()
+        else:
+            print(greeting_messages.break_punch_in_error)
