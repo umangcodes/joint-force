@@ -37,5 +37,7 @@ Options available:
 2. break punch out
 """
 break_options_error = "INVALID.\n No such option found. Please enter correct option."
+break_over_flow = "This is an extra break. Punch recorded."
+break_punch_in_error = "something went wrong while recording punch in. Please try again or contact your manager."
 #TODO: check whether multi line f strings exist or not?
 #TODO: if they do place a multiline f string which can display the punch status
