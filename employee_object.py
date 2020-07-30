@@ -19,6 +19,7 @@ class Employee():
         self.punch_status = "NOT SIGNED IN"
         self.break_est_1 = 0
         self.break_est_2 = 0
+        self.break_est_3 = 0
         self.break_est_long = 0
         self.break_actual_1 = 0
         self.break_actual_2 = 0
@@ -49,7 +50,13 @@ class Employee():
             print("Oops! Could not process shift type.\nPlease make sure you enter time in start and end time.")
     def estimate_break_time(self):
         if self.punch_status == "NOT SIGNED IN":
-            if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
+            if self.shift_type == "max time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
+                self.break_est_1 = datetime.timedelta(hours=2)
+                self.break_est_1 = self.start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
+                self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
+                self.break_est_2 = self.break_est_long + datetime.timedelta(hours=2, minutes=30)
+                self.break_est_3 = self.break_est_2 + datetime.timedelta(hours=2)
+            elif self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
                 self.break_est_1 = datetime.timedelta(hours=2)
                 self.break_est_1 = self.start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
                 self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
@@ -59,23 +66,43 @@ class Employee():
                 self.break_est_1 = self.start_time + self.break_est_1
                 self.break_est_2 = f"N/A"
                 self.break_est_long = f"N/A"
+            elif self.shift_type == "min time":
+                self.break_est_1 = datetime.timedelta(hours=2,minutes=30)
+                self.break_est_1 = self.actual_start_time + self.break_est_1
+                self.break_est_2 = f"N/A"
+                self.break_est_long = f"N/A"
+                self.break_est_3 = f"N/A"
             else:
                 print(f"ERROR: cannot find value of <object> attribute shift_type\n\t\t\t|object.shift_type = {self.punch_status}| ")
         elif self.punch_status == "SIGNED IN":
-            if self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
+            if self.shift_type == "max time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
                 self.break_est_1 = datetime.timedelta(hours=2)
                 self.break_est_1 = self.actual_start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
                 self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
                 self.break_est_2 = self.break_est_long + datetime.timedelta(hours=2, minutes=30)
+                self.break_est_3 = self.break_est_2 + datetime.timedelta(hours=2)
+            elif self.shift_type == "full time":#TODO: another if loop which will check if the actual time is available or not and if not then calculate using admin data start time
+                self.break_est_1 = datetime.timedelta(hours=2)
+                self.break_est_1 = self.actual_start_time + self.break_est_1#TODO: Fault....function present to add self.actual_start_time also contains date.
+                self.break_est_long = self.break_est_1 + datetime.timedelta(hours=2)
+                self.break_est_2 = self.break_est_long + datetime.timedelta(hours=2, minutes=30)
+                self.break_est_3 =f"N/A"
             elif self.shift_type == "half time":
                 self.break_est_1 = datetime.timedelta(hours=2,minutes=30)
                 self.break_est_1 = self.actual_start_time + self.break_est_1
                 self.break_est_2 = f"N/A"
                 self.break_est_long = f"N/A"
+                self.break_est_3 = f"N/A"
+            elif self.shift_type == "min time":
+                self.break_est_1 = datetime.timedelta(hours=2,minutes=30)
+                self.break_est_1 = self.actual_start_time + self.break_est_1
+                self.break_est_2 = f"N/A"
+                self.break_est_long = f"N/A"
+                self.break_est_3 = f"N/A"
             else:
                 print(f"ERROR: cannot find value of <object> attribute shift_type\n\t\t\t|object.shift_type = {self.punch_status}| ")
                 #TODO: fault the punch in will provide a timestamp instead of time. The time stamp is essential so do not remove it, instead find a way to trim down the date from timestamp
-        if self.punch_status == "SIGNED OUT":
+        elif self.punch_status == "SIGNED OUT":
             print(f"shift over! breaks taken at \n break 1 at: {self.break_actual_1}\n break 2 at: {self.break_actual_2}\n long break at: {self.break_actual_long}")
 
     def estimate_break_time_with_dict(self):
