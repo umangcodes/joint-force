@@ -17,13 +17,13 @@ class Employee():
         self.actual_start_time = actual_start_time
         self.actual_end_time = actual_end_time
         self.punch_status = "NOT SIGNED IN"
-        self.break_est_1 = "N\A"
-        self.break_est_2 = "N\A"
-        self.break_est_3 = "N\A"
-        self.break_est_long = "N\A"
-        self.break_actual_1_start = "N\A"
-        self.break_actual_2_start = "N\A"
-        self.break_actual_long_start = "N\A"
+        self.break_est_1 = "N/A"
+        self.break_est_2 = "N/A"
+        self.break_est_3 = "N/A"
+        self.break_est_long = "N/A"
+        self.break_actual_1_start = "N/A"
+        self.break_actual_2_start = "N/A"
+        self.break_actual_long_start = "N/A"
         self.break_actual_1_end = "N/A"
         self.break_actual_long_end = "N/A"
         self.break_actual_2_end = "N/A"
@@ -185,3 +185,5 @@ class Employee():
                 return False
             else:
                 print(f"log: {log}")
+    def inquire_break(self):
+        if self.break_actual_1_start == "N/A":
