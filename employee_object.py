@@ -78,7 +78,7 @@ class Employee():
                 self.break_est_long = f"N/A"
             elif self.shift_type == "min time":
                 self.break_est_1 = datetime.timedelta(hours=2,minutes=30)
-                self.break_est_1 = self.actual_start_time + self.break_est_1
+                self.break_est_1 = self.start_time + self.break_est_1
                 self.break_est_2 = f"N/A"
                 self.break_est_long = f"N/A"
                 self.break_est_3 = f"N/A"
