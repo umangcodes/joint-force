@@ -22,13 +22,17 @@ class Employee():
         self.break_est_2 = "N/A"
         self.break_est_3 = "N/A"
         self.break_est_long = "N/A"
+
         self.break_actual_1_start = "N/A"
         self.break_actual_2_start = "N/A"
         self.break_actual_long_start = "N/A"
+        self.break_actual_3_start = "N/A"
+
         self.break_actual_1_end = "N/A"
         self.break_actual_long_end = "N/A"
         self.break_actual_2_end = "N/A"
         self.break_actual_3_end = "N/A"
+
         self.break_overflow = []
         self.remark = ""
         """
@@ -193,7 +197,7 @@ class Employee():
                 print(greeting_messages.break_over_flow)
                 extra_break = employee_punch.punch()
                 self.break_overflow.append(extra_break)
-            if self.break_actual_1_start == "N/A":
+            elif self.break_actual_1_start == "N/A":
                 self.break_actual_1_start = employee_punch.punch()
             elif self.break_actual_2_start == "N/A":
                 self.break_actual_2_start = employee_punch.punch()
