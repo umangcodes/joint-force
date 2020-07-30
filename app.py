@@ -71,7 +71,7 @@ while(user_option != 0):
             main_menu.display_employees_with_dict()
         elif user_option == 9:
             os.system('cls')
-            main_menu.
+            main_menu.break_op()
         elif user_option == 0:
             pass
         else:
