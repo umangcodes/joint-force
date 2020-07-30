@@ -39,5 +39,22 @@ Options available:
 break_options_error = "INVALID.\n No such option found. Please enter correct option."
 break_over_flow = "This is an extra break. Punch recorded."
 break_punch_in_error = "something went wrong while recording punch in. Please try again or contact your manager."
+
+
+
+admin_functions_message = """
+Please choose one of the following:
+1. display options
+2. day end
+"""
+
+admin_display_options = """
+Please choose one of the following:
+1. display employee
+2. display all employees
+3. display employees working after particular time
+
+9. day end
+"""
 #TODO: check whether multi line f strings exist or not?
 #TODO: if they do place a multiline f string which can display the punch status

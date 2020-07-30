@@ -31,6 +31,7 @@ import main_menu
 import os
 import sys
 import greeting_messages
+import administrator_functions
 user_option = "whatever"
 print("Welcome to employee management system!")
 while(user_option != 0):
@@ -60,7 +61,7 @@ while(user_option != 0):
         main_menu.display_employees()
     elif user_option == 6:
         os.system('cls')
-        main_menu.day_end()
+        administrator_functions.select_function()
     elif user_option == 7:
         os.system('cls')
         user_option = int(input(greeting_messages.punch_options))
