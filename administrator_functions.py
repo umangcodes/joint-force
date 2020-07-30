@@ -1,6 +1,7 @@
 import greeting_messages
 import main_menu
 import input_time_converter
+# TODO: added authorization for access to this menu
 def select_function():
     select_operation = int(input(greeting_messages.admin_functions_message))
     if select_operation == 1:
