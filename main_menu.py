@@ -141,3 +141,5 @@ def employee_punch_record(punch_type):
         employee_object.actual_end_time = employee_punch.punch()
         employee_object.punch_status = "SIGNED OUT"
 
+def break_op():
+    pass#TODO: add operations to punch in punch out breaks. add attributes to employee_object.py to log actual break punch out
