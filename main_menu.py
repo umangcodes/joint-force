@@ -151,10 +151,15 @@ def break_op():
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
     user_break_choice = int(input(greeting_messages.break_options))
-    if user_break_choice == 1:
-        #punch in
-    elif user_break_choice == 2:
-        #punch out
-    else:
-        print()
+    while user_break_choice != "N/A":
+        if user_break_choice == 1:
+
+            # punch in
+            user_break_choice = "N/A"
+        elif user_break_choice == 2:
+
+            # punch out
+            user_break_choice = "N/A"
+        else:
+            print(greeting_messages.break_options_error)
     pass#TODO: add operations to punch in punch out breaks. add attributes to employee_object.py to log actual break punch out
