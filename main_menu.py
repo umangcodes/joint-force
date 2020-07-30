@@ -13,7 +13,7 @@ give options to the admin
 from employee_object import Employee
 import input_time_converter
 import employee_punch
-import sys
+import greeting_messages
 employee_list = []
 def find_employee(method):
     """
@@ -150,5 +150,11 @@ def break_op():
     print("Break options:")
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
-    user_break_choice = int(input())
+    user_break_choice = int(input(greeting_messages.break_options))
+    if user_break_choice == 1:
+        #punch in
+    elif user_break_choice == 2:
+        #punch out
+    else:
+        print()
     pass#TODO: add operations to punch in punch out breaks. add attributes to employee_object.py to log actual break punch out
