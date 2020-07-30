@@ -36,5 +36,6 @@ Options available:
 1. break punch in
 2. break punch out
 """
+break_options_error = "INVALID.\n No such option found. Please enter correct option."
 #TODO: check whether multi line f strings exist or not?
 #TODO: if they do place a multiline f string which can display the punch status
