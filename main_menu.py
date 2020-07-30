@@ -119,6 +119,11 @@ def display_employees():
     for employee in employee_list:
         employee.estimate_break_time()
         print(f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}\t||\t{employee.break_est_3}")
+        print(f"{employee.break_overflow}")
+        print(f"{employee.break_actual_1_start}\t{employee.break_actual_1_end}\t")
+        print(f"{employee.break_actual_2_start}\t{employee.break_actual_2_end}\t")
+        print(f"{employee.break_actual_long_start}\t{employee.break_actual_long_end}\t")
+        print(f"{employee.break_actual_3_start}\t{employee.break_actual_3_end}\t")
 def display_employees_with_dict():
     for employee in employee_list:
         employee.estimate_break_time()
@@ -150,16 +155,23 @@ def break_op():
     print("Break options:")
     index_of_employee = find_employee(1)
     employee_object = employee_list[index_of_employee]
-    user_break_choice = int(input(greeting_messages.break_options))
+    user_break_choice = "1"
     while user_break_choice != "N/A":
+        user_break_choice = int(input(greeting_messages.break_options))
         if user_break_choice == 1:
-
+            employee_object.break_punch_in()
             # punch in
             user_break_choice = "N/A"
         elif user_break_choice == 2:
-
+            employee_object.break_punch_out()
             # punch out
             user_break_choice = "N/A"
         else:
             print(greeting_messages.break_options_error)
-    pass#TODO: add operations to punch in punch out breaks. add attributes to employee_object.py to log actual break punch out
+    print("punched in/out")
+            # TODO: add operations to punch in punch out breaks. add attributes to employee_object.py to log actual break punch out
+"""
+umang = Employee("umang",input_time_converter.Format_time.convert_to_timedelta(),input_time_converter.Format_time.convert_to_timedelta(),"dev")
+employee_list.append(umang)
+break_op()
+"""
