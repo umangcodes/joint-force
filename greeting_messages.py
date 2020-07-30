@@ -30,5 +30,11 @@ Press 2 to Punch out
 """
 
 time_overflow = "Time you entered is invalid!"
+
+break_options = """
+Options available:
+1. break punch in
+2. break punch out
+"""
 #TODO: check whether multi line f strings exist or not?
 #TODO: if they do place a multiline f string which can display the punch status
