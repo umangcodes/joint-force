@@ -69,6 +69,8 @@ while(user_option != 0):
         elif user_option == 8:
             os.system('cls')
             main_menu.display_employees_with_dict()
+        elif user_option == 0:
+            pass
         else:
             print(f"{user_option} --> no such option present")
     except:
