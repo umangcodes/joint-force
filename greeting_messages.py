@@ -18,6 +18,10 @@ Please input from the following options:
 4. find employee
 5. display information
 6. day end(Admin rights required)
+7. punch options
+8. breaks options
+
+0. quit
 ==> """
 
 punch_options = """
