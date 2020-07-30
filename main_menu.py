@@ -142,4 +142,13 @@ def employee_punch_record(punch_type):
         employee_object.punch_status = "SIGNED OUT"
 
 def break_op():
+    """
+    find employee
+    change break_actual_x
+    :return:
+    """
+    print("Break options:")
+    index_of_employee = find_employee(1)
+    employee_object = employee_list[index_of_employee]
+    user_break_choice = int(input())
     pass#TODO: add operations to punch in punch out breaks. add attributes to employee_object.py to log actual break punch out
