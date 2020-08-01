@@ -14,6 +14,7 @@ from employee_object import Employee
 import input_time_converter
 import employee_punch
 import greeting_messages
+import change_remarks
 employee_list = []
 def find_employee(method):
     """
@@ -141,11 +142,13 @@ def employee_punch_record(punch_type):
         employee_object.actual_start_time = employee_punch.punch()
         employee_object.punch_status = "SIGNED IN"
         employee_object.estimate_break_time()
-        employee_object.remark =
+        employee_object.remark["start_status"] = change_remarks.initial_remark(employee_object.start_time,employee_object.actual_start_time)
     elif punch_type == 2:
         employee_punch.display_current_time()
         employee_object.actual_end_time = employee_punch.punch()
         employee_object.punch_status = "SIGNED OUT"
+        employee_object.remark["end_status"] = change_remarks.initial_remark(employee_object.start_time,employee_object.actual_start_time)
+
 
 def break_op():
     """

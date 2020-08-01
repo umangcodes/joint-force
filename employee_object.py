@@ -35,7 +35,7 @@ class Employee():
         self.break_actual_3_end = "N/A"
 
         self.break_overflow = []
-        self.remark = {"Start_status": 0, "End_status": 0, "Special": 0}
+        self.remark = {"start_status": 0, "end_status": 0, "special": 0}
         """
         self.break_info = [{"break_estimate_1": 0, "break_estimate_2": 0, "break_estimate_long": 0},
                            {"break_actual_1": 0, "break_actual_2": 0, "break_actual_long": 0}]
