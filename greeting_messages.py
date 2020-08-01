@@ -52,9 +52,11 @@ admin_display_options = """
 Please choose one of the following:
 1. display employee
 2. display all employees
-3. display employees working after particular time
-
+3. display employees working after particular time (Round to hour)
+4. display employees working after particular time (Accurate)
 9. day end
+
+0. Quit
 """
 #TODO: check whether multi line f strings exist or not?
 #TODO: if they do place a multiline f string which can display the punch status
