@@ -22,6 +22,20 @@ def initial_remark(start_time,actual_start_time):
             return f"late by {abs(start_time - actual_start_time)} mins"
     else:
         return f"on time"
+def shift_end_remark(end_time,actual_end_time):
+
+    pass
+def special_notes(message_code,special_note_string):
+    if special_note_string == "Late":
+        pass
+    elif special_note_string == "Early":
+        pass
+    elif special_note_string == "Help":
+        pass
+    elif special_note_string == "Issue":
+        pass
+    elif special_note_string == "Special":
+        pass
 
 """
 a = input_time_converter.Format_time.convert_to_timedelta()
