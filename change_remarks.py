@@ -26,15 +26,15 @@ def shift_end_remark(end_time,actual_end_time):
 
     pass
 def special_notes(message_code,special_note_string):
-    if special_note_string == "Late":
+    if special_note_string == "Late":# remark if the employee has already informed about being late.
         pass
-    elif special_note_string == "Early":
+    elif special_note_string == "Early":# remark if manager wants employee to start early.
         pass
-    elif special_note_string == "Help":
+    elif special_note_string == "Help":# remark for helper shifts
         pass
-    elif special_note_string == "Issue":
+    elif special_note_string == "Issue":# remark for any issues
         pass
-    elif special_note_string == "Special":
+    elif special_note_string == "Special":# any special remarks
         pass
 
 """
