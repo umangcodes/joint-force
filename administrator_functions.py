@@ -25,6 +25,16 @@ def select_function():
                     print(employee.employee_name)
                 else:
                     print(f"No employee is starting work after this time {time_filter.seconds//3600}")
+        elif select_operation == 4:
+            time_filter = input_time_converter.Format_time.convert_to_timedelta()
+            print(time_filter)
+            print(time_filter.seconds/3600)
+            for employee in main_menu.employee_list:
+                if employee.start_time.seconds/3600 > time_filter.seconds/3600:
+                    # This will estimate according to hour and will not provide precise estimate.
+                    print(employee.employee_name)
+            # else:
+              #   print(f"No employee is starting work after this time {time_filter.seconds/3600}")
     elif select_operation == 2:
         # day end
         pass
