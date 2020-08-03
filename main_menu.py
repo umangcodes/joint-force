@@ -143,6 +143,7 @@ def employee_punch_record(punch_type):
         employee_obj.punch_status = "SIGNED IN"
         employee_obj.estimate_break_time()
         b = employee_obj.actual_start_time.hour*12 + employee_obj.actual_start_time.minute * 60 + employee_obj.actual_start_time.second
+        print(f"actual start time : {employee_obj.actual_start_time.hour}:{employee_obj.actual_start_time.minute}:{employee_obj.actual_start_time.second}")
         employee_obj.remark["start_status"] = change_remarks.initial_remark(employee_obj.start_time.seconds,b)
         print(employee_obj.remark["start_status"])
     elif punch_type == 2:

@@ -10,8 +10,11 @@ special notes
 """
 import input_time_converter
 def initial_remark(start_time,actual_start_time):
-    start_time = start_time // 3600
-    actual_start_time = actual_start_time // 3600
+    # deprecated function. Make a new one
+    print(f"start time seconds:(punch in) {start_time}")
+    print(f"start time seconds:(actual punch {actual_start_time})")
+    start_time = (start_time % 3600)//60
+    actual_start_time = actual_start_time // 60
     print(f"\n\n\t\t\tprocessed start time: {start_time}")
     input()# TODO: issue with calculating the delay or early time.
     if abs(start_time - actual_start_time) >= 5:
