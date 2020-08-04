@@ -26,62 +26,61 @@ Description: To be updated. See Scope
  
 """
 
-#TODO: add break functionality and notification system.
+# TODO: add break functionality and notification system.
 import main_menu
 import os
 import sys
 import greeting_messages
 import administrator_functions
+
 user_option = "whatever"
 print("Welcome to employee management system!")
-while(user_option != 0):
-    user_option = int(input(f"{greeting_messages.greeting_message}"))
-    if user_option == 1:
-        os.system('cls')
-        main_menu.add_employee()
-    elif user_option == 2:
-        os.system('cls')
-        main_menu.remove_employee()
-    elif user_option == 3:
-        try:
+while (user_option != 0):
+    try:
+        user_option = int(input(f"{greeting_messages.greeting_message}"))
+        if user_option == 1:
             os.system('cls')
-            user_option = int(input(f"{greeting_messages.attribute_change}"))
-            main_menu.change_employee_attributes(user_option)
-        except:
-            print("Invalid")
-    elif user_option == 4:
-        try:
+            main_menu.add_employee()
+        elif user_option == 2:
             os.system('cls')
-            user_option = int(input(f"{greeting_messages.find_employee}"))
-            main_menu.find_employee(user_option)
-        except:
-            print("invalid")
-    elif user_option == 5:
-        os.system('cls')
-        main_menu.display_employees()
-    elif user_option == 6:
-        os.system('cls')
-        administrator_functions.select_function()
-    elif user_option == 7:
-        os.system('cls')
-        user_option = int(input(greeting_messages.punch_options))
-        main_menu.employee_punch_record(user_option)
-    elif user_option == 8:
-        os.system('cls')
-        main_menu.display_employees_with_dict()
-    elif user_option == 9:
-        os.system('cls')
-        main_menu.break_op()
-    elif user_option == 0:
-        pass
-    else:
-        print(f"{user_option} --> no such option present")
-
-"""
+            main_menu.remove_employee()
+        elif user_option == 3:
+            try:
+                os.system('cls')
+                user_option = int(input(f"{greeting_messages.attribute_change}"))
+                main_menu.change_employee_attributes(user_option)
+            except:
+                print("Invalid")
+        elif user_option == 4:
+            try:
+                os.system('cls')
+                user_option = int(input(f"{greeting_messages.find_employee}"))
+                main_menu.find_employee(user_option)
+            except:
+                print("invalid")
+        elif user_option == 5:
+            os.system('cls')
+            main_menu.display_employees()
+        elif user_option == 6:
+            os.system('cls')
+            administrator_functions.select_function()
+        elif user_option == 7:
+            os.system('cls')
+            user_option = int(input(greeting_messages.punch_options))
+            main_menu.employee_punch_record(user_option)
+        elif user_option == 8:
+            os.system('cls')
+            main_menu.display_employees_with_dict()
+        elif user_option == 9:
+            os.system('cls')
+            main_menu.break_op()
+        elif user_option == 0:
+            pass
+        else:
+            print(f"{user_option} --> no such option present")
     except:
         os.system('cls')
         print("Invalid command. Please enter correct type of data.")
         input("Press any key to continue.")
         print(main_menu.employee_list)
-"""
-sys.exit()#TODO:WorkingS
+sys.exit()  # TODO:WorkingS
