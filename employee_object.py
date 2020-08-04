@@ -184,10 +184,10 @@ class Employee():
         :return:
         """
         current_time = datetime.datetime.now()
-        current_time_hour = current_time.second
+        current_time_hour = current_time.second  # time sourced from current time stamp
         # print(type(current_time_hour))
         # print(self.start_time.seconds//3600)
-        start_time_h = self.start_time.seconds // 3600
+        start_time_h = self.start_time.seconds // 3600  # time sourced from employee object start time
         if current_time_hour > start_time_h:
             return True
         elif current_time_hour <= start_time_h:
@@ -219,7 +219,7 @@ class Employee():
     def break_punch_in(self):
         if self.shift_type == "max time":
             if self.break_actual_3_start != "N/A":
-                print(greeting_messages.break_over_flow)
+                print(greeting_messages.break_over_flow)  # when employee takes more than allotted breaks
                 extra_break = employee_punch.punch()
                 self.break_overflow.append(extra_break)
             elif self.break_actual_1_start == "N/A":
