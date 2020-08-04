@@ -38,7 +38,7 @@ class Format_time():
                 while operation_status == 0:
                     user_input_hh = int(input(f"Please enter the hour(hh): "))
                     user_input_mm = int(input(f"Please enter the minutes(mm): "))
-                    if (user_input_hh <= 23) and (user_input_hh >= 00) and (user_input_mm) < 60 and (
+                    if (user_input_hh <= 23) and (user_input_hh >= 00) and (user_input_mm < 60) and (
                             user_input_mm) >= 00:
                         operation_status = 1
                     else:
