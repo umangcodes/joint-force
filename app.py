@@ -37,6 +37,8 @@ user_option = "whatever"
 print("Welcome to employee management system!")
 while (user_option != 0):
     try:
+        input("Press a button to continue")
+        os.system('cls')
         user_option = int(input(f"{greeting_messages.greeting_message}"))
         if user_option == 1:
             os.system('cls')
@@ -82,5 +84,5 @@ while (user_option != 0):
         os.system('cls')
         print("Invalid command. Please enter correct type of data.")
         input("Press any key to continue.")
-        print(main_menu.employee_list)
+        os.system('cls')
 sys.exit()  # TODO:WorkingS

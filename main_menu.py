@@ -17,7 +17,7 @@ import greeting_messages
 import change_remarks
 
 employee_list = []
-
+display_info =
 
 def find_employee(method):
     """
@@ -132,8 +132,18 @@ def change_employee_attributes(change_attribute_option):
 def display_employees():
     for employee in employee_list:
         employee.estimate_break_time()
-        print(
-            f"{employee.employee_name}\t||\t{employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t||\t{employee.actual_start_time}\t||\t{employee.actual_end_time}\t||\t{employee.break_est_1}\t||\t{employee.break_est_long}\t||\t{employee.break_est_2}\t||\t{employee.break_est_3}")
+        print(f"""{employee.employee_name}
+    {employee.start_time}\t||\t{employee.end_time}\t||\t{employee.shift_type}\t||\t{employee.location}\t
+    {employee.actual_start_time}\t||\t{employee.actual_end_time}\t
+    Breaks:
+    1. \t\t{employee.break_est_1}
+    Meal. \t{employee.break_est_long}
+    3. \t\t{employee.break_est_2}
+    overtime.\t{employee.break_est_3}
+    Remarks:
+    {employee.remark["start_status"]}
+    {employee.remark["end_status"]}
+""")
         print(f"{employee.break_overflow}")
         print(f"{employee.break_actual_1_start}\t{employee.break_actual_1_end}\t")
         print(f"{employee.break_actual_2_start}\t{employee.break_actual_2_end}\t")
@@ -170,6 +180,8 @@ def employee_punch_record(punch_type):
         employee_punch.display_current_time()
         employee_obj.actual_end_time = employee_punch.punch()
         employee_obj.punch_status = "SIGNED OUT"
+        employee_obj.remark["end_status"] = change_remarks.shift_end_remark(employee_obj.end_time,
+                                                                          employee_obj.actual_end_time)
         # employee_obj.remark["end_status"] = change_remarks.initial_remark(employee_obj.start_time.seconds,employee_obj.actual_start_time.second)
 
 

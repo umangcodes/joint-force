@@ -39,7 +39,28 @@ def initial_remark(start_time, actual_start_time):
 
 
 def shift_end_remark(end_time, actual_end_time):
-    pass
+    print(f"start time seconds:(punch in) {end_time}")
+    print(f"start time seconds:(actual punch {actual_end_time})")
+    stamp_time = extract_time_attributes.extract_time_with_attributes(1, actual_end_time)
+    delta_time = extract_time_attributes.extract_time_with_attributes(2, end_time)
+    actual_end_time = input_time_converter.Format_time.convert_to_timedelta(1, input_hours=stamp_time[0],
+                                                                              input_minutes=stamp_time[1])
+    # stamp_time[0] = hour
+    # stamp_time[1] = min
+    # transferring values
+    # start_time = delta_time
+    # actual_start_time = stamp_time
+    print(f"\n\n\t\t\tprocessed start time: {end_time}")
+    input()  # TODO: issue with calculating the delay or early time.
+    print(f"start_time = {type(end_time)}\nactual_start_time = {type(actual_end_time)}")
+    if abs(end_time - actual_end_time) >= datetime.timedelta(minutes=5):
+        # 300 seconds == 5 mins
+        if end_time > actual_end_time:
+            return f"early by {abs(end_time - actual_end_time)} mins"
+        elif end_time < actual_end_time:
+            return f"late by {abs(end_time - actual_end_time)} mins"
+    else:
+        return f"on time"
 
 
 def special_notes(message_code, special_note_string):
