@@ -13,3 +13,5 @@ class Regulations_variables:
     full_shift_time_difference = 8
     half_shift_time_difference = 5
     min_shift_time = 4
+
+system_debug = 1
