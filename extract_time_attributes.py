@@ -1,3 +1,25 @@
+"""
+Project: Generic
+Author: Umang A
+Date: 03 August 2020
+
+Description:    This module provides functions to extract time attributes such as hour and minutes from a
+                time stamp or time delta objects.
+        ========================================================================================================
+                                                    How it works?
+        ========================================================================================================
+        1. Import module
+        2. use function extract_time_with_attributes(ARG1,ARG2)
+
+        3. ARG1 = 1 for extracting information from time stamp
+        4. ARG2 = timestamp
+                                OR
+        3. ARG1 = for extracting information from time delta object
+        4. ARG2 = timedelta.seconds
+
+Modified: NONE
+"""
+
 import global_logic_flags
 import datetime
 
@@ -23,6 +45,7 @@ def extract_attributes_from_timedelta(input_seconds):
     """
     output_hour = input_seconds // 3600
     output_min = input_seconds // 60 - (output_hour * 60)
+    # To extract minutes of an hour from the total minutes of a day.
     return output_hour, output_min
 
 
