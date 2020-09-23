@@ -1,9 +1,11 @@
-scope:
+Employee Management System:
 
-make a scheduler for a general store.
-
-Tech details:
-
-make user objects which store the data of when the peron starts their shift when they end their shift, break times and actual break times.
-
-Also provide an option which lets the administrator swap or remove the person.
+==> Functions and Feature:
+    - add employees
+    - remove employees
+    - view employees
+    - change employee attribute
+    - punch In/Out employee
+    - Break time record
+    - Time attributes with time and timedelta objects
+    - 
